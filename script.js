@@ -31,7 +31,7 @@ class Particle{
     draw(){
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI*2, false);
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#FFFFFF';
         ctx.fill();
     }
     update(){
@@ -75,7 +75,7 @@ function init(){
         let y = (Math.random() * ((innerHeight - size *2) -(size *2))+ size *2);
         let directionX = (Math.random() *5) - 2.5;
         let directionY = (Math.random() *5) - 2.5;
-        let color = '#000000';
+        let color = '#FFFFFF';
 
         particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
     }
@@ -92,7 +92,7 @@ function connect(){
                 + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                 if(distance < (canvas.width/7) * (canvas.height/7)){
                     opacityVal = 1 - (distance/20000);
-                    ctx.strokeStyle = 'rgba(0,0,0,' + opacityVal + ')';
+                    ctx.strokeStyle = 'rgba(255,255,255,' + opacityVal + ')';
                     ctx.beginPath();
                     ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                     ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
